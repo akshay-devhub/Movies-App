@@ -38,6 +38,51 @@
 </ul>
 
 <hr/>
+<p align="center">
+  <a href="https://github.com/user-attachments/assets/abc819b8-3db0-474b-8c6c-8f7bda3f4dd0">
+    <img src="https://github.com/user-attachments/assets/abc819b8-3db0-474b-8c6c-8f7bda3f4dd0" width="180"/>
+  </a>
+  <a href="https://github.com/user-attachments/assets/c3958dbf-a163-49b0-8401-5081f6c69a0d">
+    <img src="https://github.com/user-attachments/assets/c3958dbf-a163-49b0-8401-5081f6c69a0d" width="180"/>
+  </a>
+  <a href="https://github.com/user-attachments/assets/831ae2c8-ea8b-4735-9ce9-07b57aceb35f">
+    <img src="https://github.com/user-attachments/assets/831ae2c8-ea8b-4735-9ce9-07b57aceb35f" width="180"/>
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/user-attachments/assets/6ca022e7-8231-4b09-b116-3a138e291026">
+    <img src="https://github.com/user-attachments/assets/6ca022e7-8231-4b09-b116-3a138e291026" width="180"/>
+  </a>
+  <a href="https://github.com/user-attachments/assets/bcd2c89d-4b8e-4ed2-aa6e-30f472eea1cd">
+    <img src="https://github.com/user-attachments/assets/bcd2c89d-4b8e-4ed2-aa6e-30f472eea1cd" width="180"/>
+  </a>
+  <a href="https://github.com/user-attachments/assets/53e0e6f2-60fb-40b9-9c18-9d12bfd17edb">
+    <img src="https://github.com/user-attachments/assets/53e0e6f2-60fb-40b9-9c18-9d12bfd17edb" width="180"/>
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/user-attachments/assets/f22395f0-02c7-4430-8490-69fe6ae095e7">
+    <img src="https://github.com/user-attachments/assets/f22395f0-02c7-4430-8490-69fe6ae095e7" width="180"/>
+  </a>
+  <a href="https://github.com/user-attachments/assets/e55af1e5-d982-4576-80ba-06f4a7477931">
+    <img src="https://github.com/user-attachments/assets/e55af1e5-d982-4576-80ba-06f4a7477931" width="180"/>
+  </a>
+  <a href="https://github.com/user-attachments/assets/cf3c41a8-cea0-40f2-8e7c-132933721c65">
+    <img src="https://github.com/user-attachments/assets/cf3c41a8-cea0-40f2-8e7c-132933721c65" width="180"/>
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/user-attachments/assets/a269dcd3-b2ac-4307-89cd-764e9456f3e9">
+    <img src="https://github.com/user-attachments/assets/a269dcd3-b2ac-4307-89cd-764e9456f3e9" width="180"/>
+  </a>
+  <a href="https://github.com/user-attachments/assets/1e65ac8d-6b90-47bc-95e5-2c4a16d2e7f5">
+    <img src="https://github.com/user-attachments/assets/1e65ac8d-6b90-47bc-95e5-2c4a16d2e7f5" width="180"/>
+  </a>
+</p>
+
 
 <h2>🆕 No Internet Handling & Data Sync</h2>
 <ul>
