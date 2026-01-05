@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Movies Hub</string>
+    <string name="trending_now">Trending Now "\uD83D\uDD25"</string>
+    <string name="now_playing">Now Playing "\uD83C\uDF7F"</string>
+    <string name="popular_movies">Popular Movies</string>
+    <string name="upcoming_movies">Upcoming Movies</string>
+    <string name="discover_movies">Discover Movies</string>
+    <string name="header_text">What would you like to watch?</string>
+    <string name="search_movies">Search Movies...</string>
+    <string name="watching_label">Movies Hub</string>
+    <string name="watching_label2">Watch your favorite movies information on Movies Hub</string>
+    <string name="explore_now">Explore Now</string>
+    <string name="waiting_net_check">Please check your internet connection and try again.</string>
+    <string name="no_net_check">No Internet Connection!</string>
+    <string name="no_net_retry">Retry</string>
+    <string name="no_net_check_cancel">Cancel</string>
+
+
+</resources>
