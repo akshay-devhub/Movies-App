@@ -24,7 +24,7 @@ interface MoviesApi {
 
     @GET("movie/{movie_id}/credits")
     suspend fun getMovieCast(
-        @Path("movie_id") movieId: Int,
+        @Path("movie_id") movieId: Long,
         @Query("api_key") apiKey: String = BuildConfig.API_KEY,
     ): MovieCastResponse
 

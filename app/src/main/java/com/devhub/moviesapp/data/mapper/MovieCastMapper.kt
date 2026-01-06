@@ -6,7 +6,7 @@ import com.devhub.moviesapp.domain.model.MovieCast
 
 
 fun MovieCastDto.toMovieCastEntity(
-    movieId: Int,
+    movieId: Long,
 ): MovieCastEntity {
     return MovieCastEntity(
         adult = adult ?: false,

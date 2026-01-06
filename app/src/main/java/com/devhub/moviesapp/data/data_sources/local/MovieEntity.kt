@@ -7,7 +7,7 @@ import com.devhub.moviesapp.utils.Constant.MOVIES_TABLE
 @Entity(tableName = MOVIES_TABLE)
 data class MovieEntity(
     @PrimaryKey
-    val id: Int,
+    val id: Long,
     val category: String,
     val adult: Boolean,
     val backdrop_path: String,

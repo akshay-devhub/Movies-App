@@ -36,7 +36,7 @@ class MovieDetailsViewModel @Inject constructor(
     }
 
 
-    private fun fetchMovieCast(movieId: Int) {
+    private fun fetchMovieCast(movieId: Long) {
         viewModelScope.launch {
             _uiState.update { it.copy(movieCastState = UiState.Loading) }
             try {

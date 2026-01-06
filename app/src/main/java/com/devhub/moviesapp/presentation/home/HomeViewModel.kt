@@ -18,73 +18,25 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val movieUseCase: MovieUseCase,
+    movieUseCase: MovieUseCase,
 ) : ViewModel() {
 
-    private val _uiState = MutableStateFlow(HomeState())
+    private val trendingPagingFlow =
+        movieUseCase.getMoviesByCategory(TRENDING)
+            .cachedIn(viewModelScope)
+
+    private val nowPlayingPagingFlow =
+        movieUseCase.getMoviesByCategory(NOW_PLAYING)
+            .cachedIn(viewModelScope)
+
+    private val _uiState = MutableStateFlow(
+        HomeState(
+            trendingMovies =
+                UiState.Success(trendingPagingFlow),
+            nowPlayingMovies = UiState.Success(nowPlayingPagingFlow),
+        )
+    )
     val uiState: StateFlow<HomeState> = _uiState
 
-    private var isHomeDataLoaded = false
 
-    init {
-        loadHomeDataOnce()
-    }
-
-    fun onInternetAvailable() {
-        loadDataRetry()
-    }
-
-
-    fun loadHomeDataOnce() {
-        if (isHomeDataLoaded) return
-        isHomeDataLoaded = true
-
-        getTrendingMovies()
-        getNowPlayingMovies()
-    }
-
-    fun loadDataRetry() {
-        getTrendingMovies(forceReload = true)
-        getNowPlayingMovies(forceReload = true)
-    }
-
-
-    private fun getTrendingMovies(forceReload: Boolean = false) {
-        if (!forceReload && _uiState.value.trendingMovies is UiState.Success) return
-
-        viewModelScope.launch {
-            _uiState.update { it.copy(trendingMovies = UiState.Loading) }
-            try {
-                val data = movieUseCase
-                    .getMoviesByCategory(TRENDING)
-                    .cachedIn(viewModelScope)
-
-                _uiState.update {
-                    it.copy(trendingMovies = UiState.Success(data))
-                }
-            } catch (e: Exception) {
-                _uiState.update {
-                    it.copy(trendingMovies = UiState.Error(e.message.orEmpty()))
-                }
-            }
-        }
-    }
-
-    private fun getNowPlayingMovies(forceReload: Boolean = false) {
-        if (!forceReload && _uiState.value.nowPlayingMovies is UiState.Success) return
-
-        viewModelScope.launch {
-            _uiState.update { it.copy(nowPlayingMovies = UiState.Loading) }
-            try {
-                val data = movieUseCase.getMoviesByCategory(NOW_PLAYING).cachedIn(viewModelScope)
-                _uiState.update {
-                    it.copy(nowPlayingMovies = UiState.Success(data))
-                }
-            } catch (e: Exception) {
-                _uiState.update {
-                    it.copy(nowPlayingMovies = UiState.Error(e.message.orEmpty()))
-                }
-            }
-        }
-    }
 }

@@ -38,7 +38,7 @@ interface MovieDao {
     suspend fun upsertMovieCastList(movieCast: List<MovieCastEntity>)
 
     @Query("SELECT* FROM $MOVIES_CAST_TABLE WHERE movieId = :movieId")
-    fun getMovieCastById(movieId: Int): List<MovieCastEntity>
+    fun getMovieCastById(movieId: Long): List<MovieCastEntity>
 
 
     // Favorite Movies
@@ -50,9 +50,9 @@ interface MovieDao {
     suspend fun getAllFavoriteMovies(): List<FavoriteMovieEntity>
 
     @Query("SELECT* FROM $FAVORITE_MOVIES_TABLE WHERE id = :movieId")
-    suspend fun getFavoriteMovieById(movieId: Int): FavoriteMovieEntity?
+    suspend fun getFavoriteMovieById(movieId: Long): FavoriteMovieEntity?
 
     @Query("DELETE FROM $FAVORITE_MOVIES_TABLE WHERE id = :movieId")
-    suspend fun deleteFavoriteMovie(movieId: Int)
+    suspend fun deleteFavoriteMovie(movieId: Long)
 
 }

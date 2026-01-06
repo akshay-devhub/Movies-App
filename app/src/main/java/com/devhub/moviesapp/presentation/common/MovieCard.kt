@@ -30,6 +30,7 @@ import coil.request.ImageRequest
 import com.devhub.moviesapp.BuildConfig
 import com.devhub.moviesapp.R
 import com.devhub.moviesapp.domain.model.Movie
+import com.devhub.moviesapp.presentation.home.component.MoviePoster
 import com.devhub.moviesapp.utils.toRatingString
 
 
@@ -49,16 +50,19 @@ fun MovieCard(movie: Movie, onClick: (Movie) -> Unit) {
         val context = LocalContext.current
 
         // this like a glide image loader
-        AsyncImage(
-            model = ImageRequest.Builder(context).data(BuildConfig.BASE_IMG_URL + movie.poster_path)
-                .build(),
-            contentDescription = null,
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(180.dp)
-                .background(colorResource(R.color.white)),
-            contentScale = ContentScale.Crop
+        MoviePoster(
+            imageUrl =BuildConfig.BASE_IMG_URL + movie.poster_path
         )
+//        AsyncImage(
+//            model = ImageRequest.Builder(context).data(BuildConfig.BASE_IMG_URL + movie.poster_path)
+//                .build(),
+//            contentDescription = null,
+//            modifier = Modifier
+//                .fillMaxWidth()
+//                .height(180.dp)
+//                .background(colorResource(R.color.white)),
+//            contentScale = ContentScale.Crop
+//        )
 
         Spacer(modifier = Modifier.height(10.dp))
 

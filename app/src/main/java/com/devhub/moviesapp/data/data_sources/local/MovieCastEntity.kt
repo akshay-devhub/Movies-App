@@ -7,8 +7,8 @@ import com.devhub.moviesapp.utils.Constant.MOVIES_CAST_TABLE
 @Entity(tableName = MOVIES_CAST_TABLE)
 data class MovieCastEntity(
     @PrimaryKey
-    val id: Int,
-    val movieId: Int,
+    val id: Long,
+    val movieId: Long,
     val adult: Boolean,
     val cast_id: Int,
     val character: String,

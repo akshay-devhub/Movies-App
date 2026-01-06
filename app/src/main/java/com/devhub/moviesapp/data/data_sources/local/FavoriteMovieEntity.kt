@@ -7,7 +7,7 @@ import com.devhub.moviesapp.utils.Constant.FAVORITE_MOVIES_TABLE
 @Entity(tableName = FAVORITE_MOVIES_TABLE)
 data class FavoriteMovieEntity(
     @PrimaryKey
-    val id: Int,
+    val id: Long,
     val adult: Boolean,
     val backdrop_path: String,
     val genre_ids: String,

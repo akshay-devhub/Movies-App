@@ -1,29 +1,20 @@
 package com.devhub.moviesapp.presentation.home
 
 import android.annotation.SuppressLint
-import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowRightAlt
-import androidx.compose.material.icons.filled.Refresh
-import androidx.compose.material3.CenterAlignedTopAppBar
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
@@ -54,7 +45,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.Observer
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.devhub.moviesapp.R
 import com.devhub.moviesapp.domain.model.Movie
@@ -86,12 +76,7 @@ fun HomeScreen(
 
     val snackbarHostState = remember { SnackbarHostState() }
     val scope = rememberCoroutineScope()
-    var totalLoadedCached: Int? = 0
 
-    val pagingItems = (uiState.trendingMovies as UiState.Success)
-        .data
-        ?.collectAsLazyPagingItems()
-    totalLoadedCached = pagingItems?.itemCount
 
     DisposableEffect(lifecycleOwner) {
         val observer = Observer<Boolean> { connected ->
@@ -150,19 +135,7 @@ fun HomeScreen(
                 .padding(paddingValues)
 
         ) {
-            if (totalLoadedCached == 0 || !isConnected) {
-                RetryView(
-                    message = stringResource(id = R.string.no_net_check),
-                    onRetry = {
-                        if (isConnected) {
-                            viewModel.loadDataRetry()
 
-                        }
-                    }
-                )
-            } else{
-                Column {  }
-            }
             Text(
                 text = stringResource(id = R.string.header_text),
                 style = TextStyle(
@@ -237,45 +210,7 @@ fun HomeScreen(
     }
 }
 
-@Composable
-fun RetryView(
-    modifier: Modifier = Modifier,
-    message: String = "Something went wrong",
-    onRetry: () -> Unit
-) {
-    Column(
-        modifier = modifier
-            .fillMaxWidth()
-            .padding(24.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Icon(
-            imageVector = Icons.Default.Refresh,
-            contentDescription = "Retry",
-            tint = MaterialTheme.colorScheme.primary,
-            modifier = Modifier
-                .size(40.dp)
-                .clickable { onRetry() }
-        )
 
-        Spacer(modifier = Modifier.height(8.dp))
-
-        Text(
-            text = message,
-            style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurface
-        )
-
-        Text(
-            text = "Retry",
-            color = MaterialTheme.colorScheme.primary,
-            fontWeight = FontWeight.Bold,
-            modifier = Modifier
-                .padding(top = 6.dp)
-                .clickable { onRetry() }
-        )
-    }
-}
 
 
 

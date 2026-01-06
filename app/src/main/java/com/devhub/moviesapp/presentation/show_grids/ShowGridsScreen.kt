@@ -11,15 +11,9 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.res.stringResource
-import androidx.lifecycle.Observer
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.devhub.moviesapp.R
 import com.devhub.moviesapp.domain.model.Movie
@@ -45,24 +39,8 @@ fun ShowGridsScreen(
         TRENDING -> stringResource(R.string.trending_now)
         else -> title
     }
-    var isConnected by remember { mutableStateOf(true) }
-    val lifecycleOwner = LocalLifecycleOwner.current
 
-    DisposableEffect(lifecycleOwner) {
-        val observer = Observer<Boolean> { connected ->
-            isConnected = connected
 
-        }
-
-        networkViewModel.isConnected.observe(lifecycleOwner, observer)
-
-        onDispose {
-            networkViewModel.isConnected.removeObserver(observer)
-        }
-    }
-    if (isConnected) {
-        viewModel.onInternetAvailable()
-    }
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(

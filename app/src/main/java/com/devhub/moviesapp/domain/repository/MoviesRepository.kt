@@ -17,16 +17,16 @@ interface MoviesRepository {
     ): Flow<PagingData<MovieEntity>>
 
 
-    fun getMovieCast(movieId: Int): Flow<List<MovieCastEntity>>
+    fun getMovieCast(movieId: Long): Flow<List<MovieCastEntity>>
 
     fun searchMovies(query: String): Flow<PagingData<MovieDto>>
 
 
     suspend fun addFavoriteMovie(movie: Movie)
 
-    suspend fun getFavoriteMovieById(movieId: Int): Movie?
+    suspend fun getFavoriteMovieById(movieId: Long): Movie?
 
-    suspend fun deleteFavoriteMovie(movieId: Int)
+    suspend fun deleteFavoriteMovie(movieId: Long)
 
     fun getAllFavoriteMovies(): Flow<List<FavoriteMovieEntity>>
     suspend fun getMovieByImdbId(imdbId: String): Movie

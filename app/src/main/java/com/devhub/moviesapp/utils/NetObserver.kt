@@ -56,15 +56,9 @@ fun NetworkObserver(
                 },
                 onRetry = {
                     userDismissed = false
-                    if (isConnected) {
-                        homeViewModel.onInternetAvailable()
-                    }
+
                 }
             )
-        } else {
-            if (isConnected) {
-                homeViewModel.onInternetAvailable()
-            }
         }
     }
 }

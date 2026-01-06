@@ -70,7 +70,7 @@ class MoviesRepositoryImpl(
     }
 
 
-    override fun getMovieCast(movieId: Int): Flow<List<MovieCastEntity>> = channelFlow {
+    override fun getMovieCast(movieId: Long): Flow<List<MovieCastEntity>> = channelFlow {
         val movieCast = moviesApi.getMovieCast(movieId).movieCastDto
 
         movieDatabase.withTransaction {
@@ -102,11 +102,11 @@ class MoviesRepositoryImpl(
         movieDatabase.movieDao.upsertFavoriteMovie(movie.toFavoriteMovieEntity())
     }
 
-    override suspend fun getFavoriteMovieById(movieId: Int): Movie? {
+    override suspend fun getFavoriteMovieById(movieId: Long): Movie? {
         return movieDatabase.movieDao.getFavoriteMovieById(movieId)?.toMovie()
     }
 
-    override suspend fun deleteFavoriteMovie(movieId: Int) {
+    override suspend fun deleteFavoriteMovie(movieId: Long) {
         movieDatabase.movieDao.deleteFavoriteMovie(movieId)
     }
 
