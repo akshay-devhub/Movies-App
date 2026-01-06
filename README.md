@@ -32,9 +32,11 @@
   <li>Movie Details Screen</li>
   <li>Search Screen for movies</li>
   <li>Favorites Screen (stored locally)</li>
+ <li>Shimmer for Appealing User Experience</li>
   <li>Offline movie caching using Room Database</li>
   <li>Movie sharing using Deep linking</li>
   <li>Pagination using Paging 3 (RemoteMediator + PagingSource)</li>
+
 </ul>
 
 <hr/>
