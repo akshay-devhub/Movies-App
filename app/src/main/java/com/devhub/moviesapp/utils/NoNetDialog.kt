@@ -2,6 +2,8 @@ import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.res.stringResource
+import com.devhub.moviesapp.R
 
 @Composable
 fun NoInternetDialog(
@@ -11,21 +13,17 @@ fun NoInternetDialog(
     AlertDialog(
         onDismissRequest = onDismiss,
         title = {
-            Text("No Internet Connection")
+            Text(stringResource(id = R.string.no_net_check))
         },
         text = {
-            Text("Please check your internet connection and try again.")
+            Text(stringResource(id = R.string.continue_local_data))
         },
         confirmButton = {
             TextButton(onClick = onRetry) {
-                Text("Retry")
+                Text(stringResource(id = R.string.ok))
             }
         },
-        dismissButton = {
-            TextButton(onClick = onDismiss) {
-                Text("Cancel")
-            }
-        }
+
     )
 }
 

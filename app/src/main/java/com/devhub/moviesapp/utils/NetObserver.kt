@@ -23,7 +23,6 @@ fun NetworkObserver(
 
     var isConnected by remember { mutableStateOf(true) }
     var userDismissed by remember { mutableStateOf(false) }
-    var isCached by remember { mutableStateOf(true) }
 
     val showDialog = !isConnected && !userDismissed
 
@@ -55,7 +54,7 @@ fun NetworkObserver(
                     userDismissed = true
                 },
                 onRetry = {
-                    userDismissed = false
+                    userDismissed = true
 
                 }
             )

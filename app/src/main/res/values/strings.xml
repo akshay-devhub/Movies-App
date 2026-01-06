@@ -11,8 +11,10 @@
     <string name="watching_label2">Watch your favorite movies information on Movies Hub</string>
     <string name="explore_now">Explore Now</string>
     <string name="waiting_net_check">Please check your internet connection and try again.</string>
-    <string name="no_net_check">No Internet Connection!</string>
+    <string name="no_net_check">No Internet Connection</string>
+    <string name="continue_local_data">“You can continue using the app with saved data.”</string>
     <string name="no_net_retry">Retry</string>
+    <string name="ok">OK</string>
     <string name="no_net_check_cancel">Cancel</string>
 
 
